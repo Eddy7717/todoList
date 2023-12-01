@@ -1,0 +1,10 @@
+$primary: rgb(68, 154, 229);
+$secondary: rgb(46, 46, 46);
+$tertiary: rgb(66, 149, 203);
+
+// root
+:root {
+  --primary: $primary;
+  --secondary: $secondary;
+  --tertiary: $tertiary;
+}

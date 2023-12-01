@@ -1,0 +1,16 @@
+header {
+  background-color: $secondary;
+  color: white;
+  padding: 1rem 0;
+  &__logo {
+    max-width: 3rem;
+    max-height: 3rem;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    a + a {
+      margin-left: 1rem;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "error": {
+    "title": "404 Error",
+    "message": "Oups an error occured",
+    "link": "Click here to return to homepage"
+  },
+  "nav": {
+    "homepage": "Home",
+    "contact": "Contact"
+  },
+  "footer": {
+    "by": "Made by"
+  }
+}

@@ -1,0 +1,4 @@
+.container {
+  max-width: clamp(calc(100% - 2rem), calc(100% - 2rem), 1200px);
+  margin: auto;
+}

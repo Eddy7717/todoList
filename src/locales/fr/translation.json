@@ -1,0 +1,15 @@
+{
+  "error": {
+    "title": "Erreur 404",
+    "message": "Oups une erreur est survenue",
+    "link": "Cliquez-ici pour retourner à l'accueil"
+  },
+  "nav": {
+    "homepage": "Accueil",
+    "contact": "Contact",
+    "about": "À propos"
+  },
+  "footer": {
+    "by": "Fait par"
+  }
+}
