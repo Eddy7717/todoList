@@ -3,11 +3,15 @@ import axios from "axios";
 import Icon from "@mdi/react";
 import { mdiDelete, mdiPencil } from "@mdi/js";
 
+import PopupConfirm from "../components/popupConfirm";
+
 function Home() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
   const [editingTodoId, setEditingTodoId] = useState(null);
   const [updatedTodoText, setUpdatedTodoText] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [deleteTodoId, setDeleteTodoId] = useState(null);
 
   useEffect(() => {
     // Effectué une seule fois lors du montage du composant
@@ -43,15 +47,23 @@ function Home() {
   };
 
   const handleDelete = (id) => {
-    // Effectuer une requête pour supprimer le todo de la base de données
+    setDeleteTodoId(id);
+    setShowPopup(true);
+  };
+
+  const handleCancelDelete = () => {
+    setShowPopup(false);
+    setDeleteTodoId(null);
+  };
+
+  const handleConfirmDelete = () => {
     axios
-      .delete(`/api/todoList/${id}`)
+      .delete(`/api/todoList/${deleteTodoId}`)
       .then(() => {
-        // Mettre à jour la liste des todos après la suppression
-        // On créé un tableau todo a partir de celui existant
-        // et on met comme condition qu'on ajoute chaque todo tant que l'id est different de celui qui vient d'etre supprimé
-        const updatedTodos = todos.filter((todo) => todo.id !== id);
+        const updatedTodos = todos.filter((todo) => todo.id !== deleteTodoId);
         setTodos(updatedTodos);
+        setShowPopup(false);
+        setDeleteTodoId(null);
       })
       .catch((error) => {
         console.error("Erreur lors de la suppression du todo :", error);
@@ -127,6 +139,13 @@ function Home() {
             />
             <button type="submit">Ajouter</button>
           </form>
+          {showPopup && (
+            <PopupConfirm
+              message="Êtes-vous sûr de vouloir supprimer ce todo ?"
+              onCancel={handleCancelDelete}
+              onConfirm={handleConfirmDelete}
+            />
+          )}
         </div>
       </div>
     </>

@@ -2,3 +2,39 @@
   max-width: clamp(calc(100% - 2rem), calc(100% - 2rem), 1200px);
   margin: auto;
 }
+
+button {
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  box-shadow: 0 6px 9px #00000029;
+  max-width: 70%;
+  &__close {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+  }
+  &__content {
+    padding: 1.5rem 2rem 1rem;
+  }
+  &-confirm {
+    &__confirm {
+      background: rgb(111, 228, 111);
+      color: white;
+      font-weight: bold;
+      padding: 0.2rem 0.5rem;
+    }
+    &__cancel {
+      background: rgb(236, 17, 17);
+      color: white;
+      font-weight: bold;
+      padding: 0.2rem 0.5rem;
+    }
+  }
+}

@@ -11,5 +11,11 @@
   },
   "footer": {
     "by": "Fait par"
+  },
+  "actions": {
+    "yes": "Oui",
+    "no": "Non",
+    "confirm": "Confirmer",
+    "cancel": "Annuler"
   }
 }

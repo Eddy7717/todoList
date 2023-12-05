@@ -10,5 +10,11 @@
   },
   "footer": {
     "by": "Made by"
+  },
+  "actions": {
+    "yes": "Yes",
+    "no": "No",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   }
 }
